@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="questionImpl" class="question.process.QuestionLoaderImpl">
+        <constructor-arg value="/Users/mac/Developer/otus-java/otus_spring/src/main/resources/question.csv"/>
+    </bean>
+
+    <bean id="realizeQuestionPool" class="main.logic.RealizeQuestionPool">
+        <constructor-arg ref="questionImpl"/>
+    </bean>
+
+
+</beans>
