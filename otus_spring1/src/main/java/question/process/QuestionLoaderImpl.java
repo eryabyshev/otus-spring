@@ -1,4 +1,4 @@
-package question.process;
+package ru.evgeny.question.process;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -11,8 +11,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class QuestionLoaderImpl implements IQuestionLoader {
-    private static final String QUESTION = "question";
+public class QuestionLoaderImpl implements ru.evgeny.question.process.IQuestionLoader {
+    private static final String QUESTION = "ru.evgeny.question";
     private static final char[] PREFIX = {'a', 'b', 'c'};
     private String path;
 

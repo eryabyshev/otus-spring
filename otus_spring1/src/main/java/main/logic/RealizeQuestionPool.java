@@ -1,6 +1,6 @@
 package main.logic;
 
-import question.process.IQuestionLoader;
+import ru.evgeny.question.process.IQuestionLoader;
 
 import java.util.HashMap;
 import java.util.List;
@@ -11,7 +11,7 @@ public class RealizeQuestionPool {
     private IQuestionLoader questionLoader;
     private Map<String, String> answer = new HashMap<>();
     private static Scanner in = new Scanner(System.in);
-    private static final String INVALID_ANSWER = "Invalid answer!";
+    private static final String INVALID_ANSWER = "Invalid ru.evgeny.answer!";
 
     public RealizeQuestionPool(final IQuestionLoader questionLoader) {
         this.questionLoader = questionLoader;
