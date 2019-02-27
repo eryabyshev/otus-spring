@@ -10,10 +10,11 @@ import ru.evgeny.quize.interfaces.IQuize;
 
 import java.util.List;
 
-@Service
+@Component
 public class Quize implements IQuize {
 
     List<IQuestion> questions;
+
     @Autowired
     public Quize(IQuestionLoader loader) {
         questions = loader.load();

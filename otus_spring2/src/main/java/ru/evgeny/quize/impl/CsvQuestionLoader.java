@@ -1,17 +1,13 @@
 package ru.evgeny.quize.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import ru.evgeny.answer.Answer;
-import ru.evgeny.answer.CsvAnswer;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+import ru.evgeny.answer.Answer;
+import ru.evgeny.answer.CsvAnswer;
 import ru.evgeny.question.impl.CsvQuestion;
 import ru.evgeny.question.interfaces.IQuestion;
 import ru.evgeny.quize.interfaces.IQuestionLoader;
@@ -21,7 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@PropertySource("classpath:properties.properties")
+
 @Component
 public class CsvQuestionLoader implements IQuestionLoader {
 
