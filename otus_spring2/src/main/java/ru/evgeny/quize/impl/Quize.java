@@ -2,6 +2,7 @@ package ru.evgeny.quize.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import ru.evgeny.answer.Answer;
 import ru.evgeny.question.interfaces.IQuestion;
 import ru.evgeny.quize.interfaces.IQuestionLoader;
@@ -9,10 +10,11 @@ import ru.evgeny.quize.interfaces.IQuize;
 
 import java.util.List;
 
-
+@Service
 public class Quize implements IQuize {
 
     List<IQuestion> questions;
+    @Autowired
     public Quize(IQuestionLoader loader) {
         questions = loader.load();
     }

@@ -1,6 +1,12 @@
 package ru.evgeny.quize.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import ru.evgeny.answer.Answer;
 import ru.evgeny.answer.CsvAnswer;
 import org.apache.commons.csv.CSVFormat;
@@ -15,7 +21,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@PropertySource("classpath:properties.properties")
+@Component
 public class CsvQuestionLoader implements IQuestionLoader {
 
     private static final String QUESTION = "question";
@@ -24,7 +31,8 @@ public class CsvQuestionLoader implements IQuestionLoader {
     private static final char[] PREFIX = {'a', 'b', 'c'};
     private String path;
 
-    public CsvQuestionLoader(String path) {
+    @Autowired
+    public CsvQuestionLoader(@Value("${csv.path}") String path) {
         this.path = path;
     }
 

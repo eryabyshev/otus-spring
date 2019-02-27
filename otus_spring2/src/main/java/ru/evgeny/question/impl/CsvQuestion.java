@@ -1,5 +1,6 @@
 package ru.evgeny.question.impl;
 
+import org.springframework.stereotype.Service;
 import ru.evgeny.answer.Answer;
 import ru.evgeny.question.interfaces.IQuestion;
 
@@ -37,7 +38,7 @@ public class CsvQuestion implements IQuestion<Boolean> {
         try {
             int select = in.nextInt();
             result.put(question, csvQuestion.answerList.get(select - 1));
-        }catch (IllegalAccessError | ArrayIndexOutOfBoundsException e) {
+        }catch (IllegalAccessError | IndexOutOfBoundsException e) {
             System.out.println("Invalid input");
             save(question);
         }
