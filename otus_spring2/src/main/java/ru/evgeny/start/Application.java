@@ -21,7 +21,7 @@ public class Application {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.register(Application.class);
         context.refresh();
-        IQuize quize = context.getBean(Quize.class);
+        IQuize quize = context.getBean(IQuize.class);
         quize.start();
         quize.getResult();
     }
