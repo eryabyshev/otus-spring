@@ -1,9 +1,3 @@
-.idea
-/Users/mac/Developer/otus_spring/otus_spring1/.idea
-/Users/mac/Developer/otus_spring/otus_spring1/otus_spring.iml
-otus_spring2/target/
-otus_spring2/otus_spring2.iml
-
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
@@ -35,7 +29,5 @@ otus_spring2/otus_spring2.iml
 mvnw
 mvnw.cmd
 *.log
-
+*.vscode/*
 *.mvn/*
-
-
