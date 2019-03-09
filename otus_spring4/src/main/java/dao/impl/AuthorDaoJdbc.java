@@ -42,7 +42,7 @@ public class AuthorDaoJdbc implements AuthorDao {
     }
 
     public void insert(Author author) {
-        String sql = String.format("insert in to %s (%s, %s) values (?, ?)", TABLE_NAME, FIRST_NAME, LAST_NAME);
+        String sql = String.format("insert into %s (%s, %s) values (?, ?)", TABLE_NAME, FIRST_NAME, LAST_NAME);
         jdbcOperations.update(sql, author.getFirstname(), author.getFirstname());
     }
 
@@ -53,5 +53,10 @@ public class AuthorDaoJdbc implements AuthorDao {
 
     public void createTable() {
         createAuthorTable(jdbcOperations);
+    }
+
+    @Override
+    public void dropTable() {
+        SqlHelper.dropTable(jdbcOperations, TABLE_NAME);
     }
 }

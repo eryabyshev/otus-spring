@@ -8,6 +8,7 @@ import dao.interfaces.PublisherDao;
 import domain.Author;
 import domain.Book;
 import domain.Publisher;
+import org.h2.table.SubQueryInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;
@@ -63,8 +64,8 @@ public class BookDaoJdbc implements BookDao {
     }
 
     public void insert(Book book) {
-        String sql = String.format("insert in to %s ( %s, %s, %s, $s) values (?, ?, ?, ?)", TABLE_NAME, NAME, AUTHOR, GENRE, PUBLISHER);
-        jdbcOperations.update(sql, book.getId(), book.getName(), book.getAuthor(), book.getGenre(), book.getPublisher());
+        String sql = String.format("insert into %s (%s, %s, %s, %s) values (?, ?, ?, ?)", TABLE_NAME, NAME, AUTHOR, GENRE, PUBLISHER);
+        jdbcOperations.update(sql, book.getName(), book.getAuthor().getId(), book.getGenre().getId(), book.getPublisher().getId());
     }
 
     private List<Book> query(String sql, Object[] parameters) {
@@ -73,5 +74,10 @@ public class BookDaoJdbc implements BookDao {
 
     public void createTable() {
         createBookTable(jdbcOperations);
+    }
+
+    @Override
+    public void dropTable() {
+        SqlHelper.dropTable(jdbcOperations, TABLE_NAME);
     }
 }

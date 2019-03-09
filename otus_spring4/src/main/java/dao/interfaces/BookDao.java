@@ -6,7 +6,7 @@ import domain.Publisher;
 
 import java.util.List;
 
-public interface BookDao extends TableCreatable {
+public interface BookDao extends TableCreatable, TableDropable {
     long count();
 
     Book getById(long id);

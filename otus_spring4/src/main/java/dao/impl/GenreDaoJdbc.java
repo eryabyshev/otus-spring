@@ -1,5 +1,6 @@
 package dao.impl;
 
+import dao.helper.SqlHelper;
 import dao.interfaces.GenreDao;
 import domain.Genre;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,7 @@ public class GenreDaoJdbc implements GenreDao {
     }
 
     public void insert(Genre genre) {
-        String sql = String.format("insert in to %s (%s) values (?)", TABLE_NAME, NAME);
+        String sql = String.format("insert into %s (%s) values (?)", TABLE_NAME, NAME);
         jdbcOperations.update(sql, genre.getName());
     }
 
@@ -48,5 +49,10 @@ public class GenreDaoJdbc implements GenreDao {
 
     public void createTable() {
         createGenreTable(jdbcOperations);
+    }
+
+    @Override
+    public void dropTable() {
+        SqlHelper.dropTable(jdbcOperations, TABLE_NAME);
     }
 }

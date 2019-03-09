@@ -4,7 +4,7 @@ import domain.Author;
 
 import java.util.List;
 
-public interface AuthorDao extends TableCreatable {
+public interface AuthorDao extends TableCreatable, TableDropable {
     List<Author> getByName(String firstname);
 
     List<Author> getByLastName(String lastname);

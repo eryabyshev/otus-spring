@@ -4,6 +4,7 @@ import dao.helper.SqlHelper;
 import dao.interfaces.PublisherDao;
 import domain.Publisher;
 import org.springframework.jdbc.core.JdbcOperations;
+import org.springframework.stereotype.Repository;
 import rowmapper.PublisherMapper;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import static dao.helper.SqlHelper.SELECT;
 import static dao.helper.SqlHelper.WHERE;
 import static rowmapper.MapperConstant.*;
 
+@Repository
 public class PublisherDaoJdbc implements PublisherDao {
 
     private JdbcOperations jdbcOperations;

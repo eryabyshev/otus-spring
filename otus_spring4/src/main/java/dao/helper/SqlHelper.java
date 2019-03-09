@@ -11,13 +11,17 @@ public class SqlHelper {
 
     public static final String WHERE = " where ";
     public static final String CONDITION = " = ?";
-    public static final String SELECT = "select * from ";
-    private static final String COUNT_FROM = "select count(*) from ";
+    public static final String SELECT = "select * from public.";
+    private static final String COUNT_FROM = "select count(*) from public.";
+    private static final String DROP = "DROP TABLE IF EXISTS ";
 
     public static long count(JdbcOperations jdbcOperations, String tableName) {
         return jdbcOperations.queryForObject( COUNT_FROM + tableName, Long.class);
     }
 
+    public static void dropTable(JdbcOperations jdbcOperations, String tableName) {
+        jdbcOperations.execute(DROP + tableName);
+    }
 
     private static final String CREATE_TABLE = "CREATE TABLE public.";
     private static final String PRIMARY_KEY = " bigserial PRIMARY KEY NOT NULL,\n";
@@ -72,8 +76,4 @@ public class SqlHelper {
                 CREATE_UNIQUE_INDEX + PUBLISHER + "_" + ID + "_uindex ON public." + PUBLISHER + " (" + ID + ");";
         jdbcOperations.execute(sql);
     }
-
-
-
-
 }

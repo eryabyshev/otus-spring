@@ -2,7 +2,7 @@ package dao.interfaces;
 
 import domain.Genre;
 
-public interface GenreDao extends TableCreatable {
+public interface GenreDao extends TableCreatable, TableDropable {
     Genre getById(long id);
 
     long cout();
