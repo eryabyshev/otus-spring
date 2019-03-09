@@ -2,13 +2,14 @@ package dao.interfaces;
 
 import domain.Genre;
 
-import java.util.List;
-
-public interface GenreDao {
+public interface GenreDao extends TableCreatable {
     Genre getById(long id);
+
     long cout();
+
     Genre getByName(String name);
-    boolean insert(Genre genre);
+
+    void insert(Genre genre);
 
 
 }

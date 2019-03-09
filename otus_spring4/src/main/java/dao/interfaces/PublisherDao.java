@@ -5,8 +5,11 @@ import domain.Publisher;
 import java.util.List;
 
 public interface PublisherDao {
-    boolean insert(Publisher publisher);
+    void insert(Publisher publisher);
+
     long count();
-    List<Publisher> getBuName(String name);
+
+    List<Publisher> getByName(String name);
+
     Publisher getById(long id);
 }

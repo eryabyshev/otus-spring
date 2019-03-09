@@ -10,4 +10,5 @@ public interface MapperConstant {
     String PUBLISHER = "publisher";
     String ADDRESS = "addres";
     String PHONE = "phone";
+    String BOOK = "book";
 }

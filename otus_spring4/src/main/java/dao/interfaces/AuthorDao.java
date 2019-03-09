@@ -4,11 +4,14 @@ import domain.Author;
 
 import java.util.List;
 
-public interface AuthorDao {
+public interface AuthorDao extends TableCreatable {
     List<Author> getByName(String firstname);
+
     List<Author> getByLastName(String lastname);
+
     Author getById(long id);
 
     long count();
-    boolean insert(Author author);
+
+    void insert(Author author);
 }
