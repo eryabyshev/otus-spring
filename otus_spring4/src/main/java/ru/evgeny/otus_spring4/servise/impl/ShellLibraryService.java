@@ -122,7 +122,8 @@ public class ShellLibraryService implements IShellDataBaseServise {
 
     private static final Publisher publisher = new Publisher(1, PUBLISHER, ADDRESS, PHONE);
 
-    private static final Map<String, Genre> genreMap = new HashMap<String, Genre>(){{
+    private static final Map<String, Genre> genreMap = new HashMap<>();
+    static {
         genreMap.put(BUSINESS_LITERATURE, new Genre(1, BUSINESS_LITERATURE));
         genreMap.put(DETECTIVES_AND_THRILLERS, new Genre(2, DETECTIVES_AND_THRILLERS));
         genreMap.put(DOCUMENTARY_LITERATURE, new Genre(3, DOCUMENTARY_LITERATURE));
@@ -131,7 +132,7 @@ public class ShellLibraryService implements IShellDataBaseServise {
         genreMap.put(COMPUTERS_AND_INTERNET, new Genre(6, COMPUTERS_AND_INTERNET));
         genreMap.put(SCIENCE_EDUCATION, new Genre(7, SCIENCE_EDUCATION));
 
-    }};
+    }
 
     private static final String AUTHOR1 = "Майк Микаловиц";
     private static final String AUTHOR2 = "Тони Шей";
@@ -140,13 +141,14 @@ public class ShellLibraryService implements IShellDataBaseServise {
     private static final String AUTHOR5 = "Керриск М.";
 
 
-    private static Map<String, Author> authorMap = new HashMap<String, Author>(){{
+    private static Map<String, Author> authorMap = new HashMap<>();
+    static {
         authorMap.put(AUTHOR1, new Author(1, AUTHOR1.split(" ")[0], AUTHOR1.split(" ")[1]));
         authorMap.put(AUTHOR2, new Author(1, AUTHOR2.split(" ")[0], AUTHOR2.split(" ")[1]));
         authorMap.put(AUTHOR3, new Author(1, AUTHOR3.split(" ")[0], AUTHOR3.split(" ")[1] + AUTHOR3.split(" ")[2]));
         authorMap.put(AUTHOR4, new Author(1, AUTHOR4.split(" ")[0], AUTHOR4.split(" ")[1] + AUTHOR4.split(" ")[2]));
         authorMap.put(AUTHOR5, new Author(1, AUTHOR4.split(" ")[0], AUTHOR4.split(" ")[1]));
-    }};
+    }
 
 
     @Override
