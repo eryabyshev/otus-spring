@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "db",
+      "type": "ru.evgeny.otus_spring4.configuration.ApplicationConfiguration",
+      "sourceType": "ru.evgeny.otus_spring4.configuration.ApplicationConfiguration"
+    }
+  ],
+  "properties": [
+    {
+      "name": "db.db-driver",
+      "type": "java.lang.String",
+      "sourceType": "ru.evgeny.otus_spring4.configuration.ApplicationConfiguration"
+    },
+    {
+      "name": "db.db-url",
+      "type": "java.lang.String",
+      "sourceType": "ru.evgeny.otus_spring4.configuration.ApplicationConfiguration"
+    },
+    {
+      "name": "db.db-user",
+      "type": "java.lang.String",
+      "sourceType": "ru.evgeny.otus_spring4.configuration.ApplicationConfiguration"
+    }
+  ],
+  "hints": []
+}
